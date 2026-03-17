@@ -1,0 +1,143 @@
+[33md9dd9df[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mprocinfo-syscall[m[33m, [m[1;31morigin/procinfo-syscall[m[33m)[m Add syscall procinfo and test program
+[33m5474d4b[m[33m ([m[1;32mriscv[m[33m, [m[1;32mprocinfo[m[33m)[m Makefile: discover riscv64-none-elf- toolchain (#439)
+[33me90b257[m explicitly specify -march=rv64gc
+[33mdf440e2[m slightly clearer comments, for next year
+[33mc71a6c4[m ensure sbrk cannot exceed TRAPFRAME
+[33m8402fc9[m add a test for sbrk approaching MAXVA
+[33m4689d66[m fix piperead() with lazy sbrk
+[33mffdff7c[m Replace stale comment with old comment, after lazy-page allocation changes
+[33mc14b639[m pass -Wno-unknown-attributes for mkfs too
+[33m9dbd536[m Update comment
+[33m996f6ee[m fix start() args
+[33mc6a6eaa[m fix user printf for uint64
+[33m4f1bdde[m try again to fix the dirent name strncpy warning
+[33md366b51[m propagate main return value to exit status
+[33m7d7adbb[m[33m ([m[1;33mtag: [m[1;33mxv6-riscv-rev5[m[33m)[m Add DOC: for reference in book
+[33m2ce32bd[m PR 383
+[33m0bb6995[m null-terminate fmtname() result
+[33mf5dea58[m user sleep() -> pause() kernel sys_sleep() -> sys_pause() kernel fork() -> kfork() kernel exec() -> kexec() kernel wait() -> kwait() kernel exit() -> kexit() kernel kill() -> kkill() SYS_sleep -> SYS_pause
+[33m9374395[m Use mem instead of ka
+[33ma843829[m uart tx code better suited to the sleep/wakeup lecture.
+[33m6d2592a[m Clean up sbrk error handling
+[33m11362fe[m Make generation of syscall stub ready for prefix
+[33m4dfca4a[m 4096 -> PGSIZE
+[33m4a92b85[m Add a flag to the sbrk system call indicating eager or lazy allocation
+[33m79fa703[m x
+[33m5f2fbe1[m Merge branch 'riscv-crash' into riscv
+[33m36a255c[m more precise tracking of block space in log
+[33m707a9f7[m Rename to use lazy instead of sparse
+[33m3d815fc[m x
+[33m2f69c72[m Add sbrkalloc to capture a test pattern that forces allocation
+[33mf61e51d[m nits
+[33m1a8645f[m move a few vm.c functions to match book's flow a bit better
+[33m2e5f272[m qhuo
+[33mab958d7[m Revert "Document that name in dirent may not be a null-terminated string."
+[33m33844c1[m Make %u, %x, and %c unsigned
+[33mb715361[m Kill #if 0 here too
+[33m2134b23[m Support running usertests from test script Support regex to specify which tests to run
+[33m2295a9d[m Try test_log a few times before failing the test
+[33md7df697[m x
+[33m5493ec0[m x
+[33m35cd49c[m x
+[33m52efd73[m Crash tests for reclaiming an orphaned file and directory
+[33mdb26774[m PR 359, thanks segfault
+[33mfe989da[m Checkpoint WIP: a crash test
+[33m4afc4c1[m x
+[33m3c20f7d[m x
+[33m590b978[m x
+[33m10d9e78[m x
+[33mc968038[m x
+[33mb8f3093[m x
+[33mc161fb7[m fix things so that usertrap() returns to the trampoline, with return(), to make it more like kerneltrap().
+[33mb444f06[m Merge branch 'riscv-github' into riscv
+[33m5aed199[m Document that name in dirent may not be a null-terminated string.
+[33m7c0db5d[m Update
+[33me78cd36[m Fix tags
+[33md712f59[m fix kernel.ld so that _entry will appear in the right place
+[33m5de84ba[m PR 302
+[33me87826f[m Update for recent contributors
+[33md234f7b[m Kill #if 0
+[33mf454a11[m Fix compile error
+[33m181a084[m Relink user object file when user/user.ld changes
+[33md93ef57[m UART: replace magic value 0x01 with LSR_RX_READY
+[33m4b6137a[m fix comment in entry.S
+[33m709cbab[m update kernal/printf.c
+[33m4dae6fb[m let printf understands %c
+[33m5e6b14e[m refactor: clear user.h
+[33m51e2fd2[m remove ramdisk functions from defs.h
+[33mb698485[m No need to exec init process through initcode
+[33m43297ab[m Use `else` instead of `continue`
+[33m32167c7[m Ignore blank command
+[33ma45c117[m Trim leading whitespaces to avoid `cd` failure
+[33m5628970[m Merge branch 'riscv-github' into riscv
+[33m3259cfc[m Merge branch 'lazy' into riscv
+[33m7e95e76[m issue 331 -- don't save/restore sp
+[33me6e698d[m address PR 377
+[33m98107c6[m pretend to address issue #269, about -ffreestanding
+[33m79b579a[m warn when usertests justone matches no tests
+[33mf76993d[m nits
+[33m9c2419f[m push_off() previously used mycpu() without first turning off interrupts. I recently got a panic caused by this (process moved to a different core between mycpu() and ->noff). also, make panic msg printing more robust if mycpu()->noff or locks are broken.
+[33ma9c5760[m Merge branch 'riscv' of g.csail.mit.edu:xv6-dev into riscv
+[33m9ef6407[m Support lazy page allocation as a simple example to show off page faults.
+[33mc4de4b0[m Check qemu version
+[33m401f186[m Merge branch 'riscv' of g.csail.mit.edu:xv6-dev into riscv
+[33mcaac117[m Merge branch 'riscv-github' into riscv
+[33m7e88901[m Fixed buffer overflow in printint (#299)
+[33m01484b5[m fix rwsbrk type sig compile error with recent gcc
+[33mdf61469[m add riscv64-elf as TOOLPREFIX
+[33m2a39c5a[m Fixed buffer overflow in printint (#299)
+[33ma3f3a04[m fix rwsbrk type sig compile error with recent gcc
+[33mfd35ecc[m add riscv64-elf as TOOLPREFIX
+[33m3803df5[m Revert "Remove wfi for fs lab"
+[33m2e72ada[m Remove wfi for fs lab
+[33mf7b14e5[m maybe fix a race between interrupt and wfi
+[33mf8a26e9[m Merge branch 'riscv' of g.csail.mit.edu:xv6-dev into riscv
+[33m1312f0b[m Delete comment that was made obsolete by FD_DEVICE
+[33m1eebe7e[m Merge branch 'riscv' of g.csail.mit.edu:xv6-dev into riscv
+[33m5a7ecd4[m Add "," in printf
+[33m4f641a1[m better comments
+[33mfd2ee94[m maybe this is a more logical place to read uart's ISR
+[33m29ba4ec[m we don't need SSIE any more
+[33m347b0ba[m to avoid masking errors, make push_off() only turn interrupts off if they should previously have been on.
+[33m19f1119[m omit one un-needed mention of machine mode
+[33mde247db[m menvcfg also
+[33m4060b67[m change stimecmp to 0x14d
+[33m9b9ab5e[m Remove redundant copyright, now there is a license file
+[33mdab0032[m x
+[33mf8bd2f9[m synchronize usertests and exec with util lab
+[33mc28e177[m Use BPB
+[33m44f1ffb[m assert that length of filename <= DIRSIZ
+[33m1957d3e[m x
+[33m03c36a6[m Update acks
+[33me5d80df[m x
+[33m47cdb5f[m wfi to save CPU time on Athena
+[33m4d4d066[m Thanks Taojie
+[33mc0d9f31[m Thanks Lucas Wolf
+[33m6cc3d4f[m Thanks phosphagos@github
+[33ma60bf17[m Thanks segfault@github
+[33m2714279[m Thanks Marcelo Arroyo
+[33m969f03d[m Thanks snoire@github
+[33me0c3ad4[m Fix ref file name in `user.h`
+[33m93c70ce[m Remove all files created during testing
+[33m7687b38[m Report an error when `n` is not equal to `MAXFILE`
+[33m72cb384[m Update uart.c
+[33m343d1ab[m Put parentheses around macro argument.
+[33m92e60dd[m switch from machine-mode to supervisor timer interrupts. this requires qemu version >= 7.2.
+[33m5a1a4d4[m slightly more thorough testing that one can't write invalid addresses
+[33mfe940f4[m fix user.ld to get read-only text with riscv64-linux-gnu-ld 2.41
+[33mdd2574b[m tell gcc to check printf format strings add %ld %lld %u %lu %llu %lx %llx to kernel and user printf
+[33m2b55250[m no need to check state == RUNNING in timer interrupt because interrupts are always off (i.e. a lock is held) any time the current process is not in RUNNING state.
+[33m0c32c04[m kernelvec only needs to save caller-saved registers
+[33m74c1eba[m Made va and size page aligned in mappages
+[33m0802d56[m x
+[33m4a88273[m oops. scheduler() inherits the interrupt status of the most recent process to run, so it must explicitly turn them on again. It would be better if cpu->intena were really thread->intena.
+[33mf376ad7[m scheduler()'s intr_on() is in the wrong place, reflecting the locking scheme from long ago.
+[33m348cf7f[m forkret first memory model
+[33md2b2dff[m fix copyout() to refuse to write a read-only page
+[33m989e8f2[m Remove unused PLIC_M* macros
+[33m4b46c0c[m Use O_RDONLY instead of 0
+[33m463ae0a[m handle negative arguments to sleep() a little better
+[33mf5b93ef[m Update acks 61810
+[33m3d6ce9b[m Separate tests in slow and quick.  The slow tests run xv6 out of memory, out of disk space, or test big directories.
+[33med101be[m comment the sfences
+[33m581bc4c[
