@@ -4,6 +4,7 @@ struct stat;
 
 struct procinfo;
 int procinfo(int pid, struct procinfo *info);
+int trace(int);
 
 // system calls
 int fork(void);
