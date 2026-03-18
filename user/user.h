@@ -2,6 +2,9 @@
 
 struct stat;
 
+struct procinfo;
+int procinfo(int pid, struct procinfo *info);
+
 // system calls
 int fork(void);
 int exit(int) __attribute__((noreturn));
